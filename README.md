@@ -1,1 +1,1 @@
-Solving programming challenges in the book "Javascript for Kids."
+###### Solving programming challenges in the book "Javascript for Kids."
