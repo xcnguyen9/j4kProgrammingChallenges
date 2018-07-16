@@ -7,9 +7,7 @@ scores;
 scores["Lily"] += 3;
 scores["Christine"] += 10;
 scores["Morgan"] += 7;
-// Show scores for each friend
-scores;
-{Lily: 3, Christine: 10, Morgan: 7}
+scores; // {Lily: 3, Christine: 10, Morgan: 7}
 
 //Another way
 var scores = { lily: 0, morgan: 0, christine: 0
