@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman!</title>
+</head>
+
+<body>
+	<h1>Hangman!</h1>
+
+	<script>
+		// create an array of words
+		var words = ["javascript", "monkey", "amazing", "pancake", "cherish", "boredom", "frontend"]; // words added in including "cherish, boredom, and frontend"
+
+		// pick a random word
+		var word = words[Math.floor(Math.random() * words.length)];
+
+		// set up the answer array
+		var answerArray = [];
+		for (var i = 0; i < word.length; i++) {
+			answerArray[i] = "_";
+		}
+
+		var remainingLetters = word.length;
+
+		// limit guesses by setting it to the word length
+		var guesses = remainingLetters;
+
+		// the game loop
+		while (remainingLetters > 0 && guesses > 0) {
+			// show the player their progress
+			alert(answerArray.join(" "));
+
+			// get a guess from the player
+			var guess = prompt("guess a letter, or click Cancel to stop playing.");
+			if (guess === null) {
+				// exit the game
+				break;
+			} else if (guess.length !== 1) {
+				alert("please enter a single letter.");
+			} else {
+				guesses--;
+				// convert the player's guess to lowercase
+				guess = guess.toLowerCase();
+				// update the game state with the guess
+				for (var j = 0; j < word.length; j++) {
+					if (word[j] === guess && answerArray[j] === "_") { // adding another to check whether 
+						// a value in answerArray is still un underscore
+						answerArray[j] = guess;
+						remainingLetters--;
+					}
+				}
+			}
+		// the end of the game loop	
+		}
+
+		// show the answer and congratulate the player
+		alert(answerArray.join(" "));
+		alert("good job! the answer was " + word + ".");
+	</script>
+</body>
+</html>
