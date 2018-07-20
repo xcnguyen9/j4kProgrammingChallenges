@@ -43,8 +43,8 @@
 				guess = guess.toLowerCase();
 				// update the game state with the guess
 				for (var j = 0; j < word.length; j++) {
-					if (word[j] === guess && answerArray[j] === "_") { // adding another to check whether 
-						// a value in answerArray is still un underscore
+					if (word[j] === guess && answerArray[j] === "_") { // adding another condition to check whether 
+						// a value in answerArray is still an underscore
 						answerArray[j] = guess;
 						remainingLetters--;
 					}
